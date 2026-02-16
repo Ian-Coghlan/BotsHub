@@ -25,7 +25,7 @@
 Opt('MustDeclareVars', True)
 
 ; ==== Constants ====
-Global Const $DW_COMMENDATIONS_FARMER_SKILLBAR = 'OgGlQlVp6smsJRg19RTKexTkL2XsDC'
+Global Const $DW_COMMENDATIONS_FARMER_SKILLBAR = 'OgGlQpVq6smsGRg19RTKexTkL2XsDC'
 Global Const $COMMENDATIONS_FARM_INFORMATIONS = 'For best results, have :' & @CRLF _
 	& '- a full hero team that can clear HM content easily' & @CRLF _
 	& '- 13 Earth Prayers' &@CRLF _
@@ -90,8 +90,13 @@ Global Const $HERO_RITUALIST_SOS		= 5
 Global Const $HERO_RITUALIST_PROT		= 6
 Global Const $HERO_NECRO_BIP			= 7
 
-Global Const $ID_MESMER_MERCENARY_HERO = $ID_MERCENARY_HERO_1
-Global Const $ID_RITUALIST_MERCENARY_HERO = $ID_MERCENARY_HERO_2
+Global Const $ID_MESMER_MERCENARY_DPS_1_HERO = $ID_MERCENARY_HERO_2
+Global Const $ID_MESMER_MERCENARY_DPS_2_HERO = $ID_MERCENARY_HERO_3
+Global Const $ID_MESMER_MERCENARY_DPS_3_HERO = $ID_MERCENARY_HERO_6
+Global Const $ID_MESMER_MERCENARY_INEP_HERO = $ID_MERCENARY_HERO_5
+Global Const $ID_RITUALIST_MERCENARY_SOS_HERO = $ID_MERCENARY_HERO_1
+Global Const $ID_RITUALIST_MERCENARY_PROT_HERO = $ID_MERCENARY_HERO_7
+Global Const $ID_NECRO_MERCENARY_BIP_HERO = $ID_MERCENARY_HERO_4
 
 #CS ===========================================================================
 Character location :	X: -6322.51318359375, Y: -5266.85986328125
@@ -167,13 +172,13 @@ Func SetupTeamMinisterialCommendationsFarm()
 	Info('Setting up team')
 	LeaveParty()
 	RandomSleep(500)
-	AddHero($ID_GWEN)
-	AddHero($ID_NORGU)
-	AddHero($ID_RAZAH)
-	AddHero($ID_MESMER_MERCENARY_HERO)
-	AddHero($ID_RITUALIST_MERCENARY_HERO)
-	AddHero($ID_XANDRA)
-	AddHero($ID_OLIAS)
+	AddHero($ID_MESMER_MERCENARY_DPS_1_HERO)
+	AddHero($ID_MESMER_MERCENARY_DPS_2_HERO)
+	AddHero($ID_MESMER_MERCENARY_DPS_3_HERO)
+	AddHero($ID_MESMER_MERCENARY_INEP_HERO)
+	AddHero($ID_RITUALIST_MERCENARY_SOS_HERO)
+	AddHero($ID_RITUALIST_MERCENARY_PROT_HERO)
+	AddHero($ID_NECRO_MERCENARY_BIP_HERO)
 	RandomSleep(500)
 	If GetPartySize() <> 8 Then
 		Warn('Could not set up party correctly. Team size different than 8')
